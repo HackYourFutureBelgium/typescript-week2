@@ -11,7 +11,7 @@ const anEnum: {} = {};
 
 // Implement this function any type accordingly
 function isEven(number: number): boolean {
-  return number % 2 == 0;
+  return number % 2 === 0;
 }
 
 // Type the following function and variable
@@ -33,17 +33,19 @@ const joe: Developer = {
 
 const people: [Person, Developer] = [jane, joe];
 
-function printPeople(people: any[]): any {
+function printPeople(people: [Developer, Person]): void {
   // Print the name of person or the role in this function
+  people[0];
+  people[1];
 }
 
 // Type the encrpyt function correctly
-const encryptText = (plainText: any, shift: any) => {
+const encryptText = (plainText: string, shift: number) => {
   let cipherArr: any[] = [];
   let cipherLetter;
 
   plainText.split("").map((letter) => {
-    let code = letter.charCodeAt(letter);
+    let code = letter.charCodeAt(Number(letter));
     if (letter === " ") {
       return cipherArr.push(letter);
     }
@@ -61,7 +63,7 @@ const encryptText = (plainText: any, shift: any) => {
 };
 
 // Solve using a literal union type
-let vegetable: any; // :Vegetable:
+let vegetable: "Cucumber" | "Eggplant" | "Cabbage"; // :Vegetable:
 vegetable = "Cucumber";
 vegetable = "Eggplant";
 vegetable = "Cabbage";
